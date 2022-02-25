@@ -1,1 +1,2 @@
-docker-machine create --driver virtualbox
+docker-machine has been deprecated. Therefore, we create a VM with virtualbox manually, like in roger-skyline-1. 
+To make the VM networking work both ways with the local machine, we have forwarded a port. Then we install docker on debian. and test.

@@ -1,0 +1,5 @@
+To add the VM to our swarm as a node, we will need:
+- a token, obtained thus: docker swarm join-token worker
+- the IP and port via which the VM connects to local. then the following command:docker swarm join \
+  --token [TOKEN] \
+[IP]:[[PORT]] 
