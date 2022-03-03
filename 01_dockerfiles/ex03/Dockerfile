@@ -1,12 +1,23 @@
-FROM ubuntu:18.04
+FROM ubuntu
 
 MAINTAINER pwaters <pwaters@student.hive.fi>
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y curl openssh-server ca-certificates tzdata perl postfix
+RUN apt-get install -y ca-certificates
+RUN apt-get install -y openssh-server
+RUN apt-get install -y wget
+RUN apt-get install -y postfix
 
-RUN wget https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh && chmod 777 script.deb.sh && ./script.deb.sh && apt-get install -y gitlab-ce
+RUN wget https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+RUN chmod 777 script.deb.sh
+RUN ./script.deb.sh
+RUN apt-get install -y gitlab-ce
+
+RUN apt-get update 
+RUN apt-get install -y tzdata
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 443 80 22
 
