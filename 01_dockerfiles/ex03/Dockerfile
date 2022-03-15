@@ -1,18 +1,17 @@
 FROM ubuntu:focal
 
-MAINTAINER pwaters <pwaters@student.hive.fi>
-
 RUN 	apt-get update -y
 RUN 	apt-get upgrade -y
-RUN		DEBIAN_FRONTEND=noninteractive
-RUN 	apt-get install -y ca-certificates
-RUN 	apt-get install -y openssh-server
-RUN 	apt-get install -y curl
-RUN 	apt-get install -y perl
-#RUN		apt-get install -y postfix
-RUN		mkdir -p /etc/gitlab/trusted-certs
+RUN 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    	curl \
+    	openssh-server \
+    	ca-certificates \
+    	postfix
 
-RUN		openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/CN=localhost' -keyout /etc/gitlab/trusted-certs/localhost.key -out /etc/gitlab/trusted-certs/localhost.crt 
+RUN	mkdir -p /etc/gitlab/trusted-certs
+
+RUN	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/CN=localhost' \
+	-keyout /etc/gitlab/trusted-certs/localhost.key -out /etc/gitlab/trusted-certs/localhost.crt 
 RUN 	curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash
 RUN 	apt-get install -y gitlab-ce
 RUN 	rm -rf /var/lib/apt/lists/*
@@ -28,4 +27,4 @@ CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && \
 	gitlab-ctl reconfigure && service ssh restart && gitlab-ctl tail
 
 #build: docker build -t pwaters/gitlab .
-#run: docker run -it --rm -p 80:80 -p 4242:22 -p 443:443 --privileged -e GITLAB_ROOT_EMAIL="pierre.alban.waters@gmail.com" GITLAB_ROOT_PASSWORD="12345678" pwaters/gitlab
+#run: docker run -it --rm -p 80:80 -p 4242:22 -p 443:443 --privileged -e GITLAB_ROOT_EMAIL="pierre.alban.waters@gmail.com" -e GITLAB_ROOT_PASSWORD="12345678" pwaters/gitlab
