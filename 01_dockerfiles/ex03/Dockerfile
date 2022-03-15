@@ -16,15 +16,14 @@ RUN 	curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scri
 RUN 	apt-get install -y gitlab-ce
 RUN 	rm -rf /var/lib/apt/lists/*
 
-RUN	echo "external_URL \"https://localhost\"" >> /etc/gitlab/gitlab.rb
-RUN	echo "nginx['ssl_certificate'] = \"/etc/gitlab/trusted-certs/localhost.crt\"" >> /etc/gitlab/gitlab.rb
-RUN	echo "nginx['ssl_certificate_key'] = \"/etc/gitlab/trusted-certs/localhost.key\"" >> /etc/gitlab/gitlab.rb
-RUN	echo "gitlab_rails['gitlab_shell_ssh_port'] = 4242" >> /etc/gitlab/gitlab.rb
+RUN	echo "external_url \"https://localhost\"" >> /etc/gitlab/gitlab.rb && \
+	echo "nginx['ssl_certificate'] = \"/etc/gitlab/trusted-certs/localhost.crt\"" >> /etc/gitlab/gitlab.rb && \
+	echo "nginx['ssl_certificate_key'] = \"/etc/gitlab/trusted-certs/localhost.key\"" >> /etc/gitlab/gitlab.rb && \
+	echo "gitlab_rails['gitlab_shell_ssh_port'] = 4242" >> /etc/gitlab/gitlab.rb
 
 EXPOSE	22 80 443
 
-CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && \ 
-	gitlab-ctl reconfigure && service ssh restart && gitlab-ctl tail
+CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && service ssh restart && gitlab-ctl tail
 
 #build: docker build -t pwaters/gitlab .
 #run: docker run -it --rm -p 80:80 -p 4242:22 -p 443:443 --privileged -e GITLAB_ROOT_EMAIL="pierre.alban.waters@gmail.com" -e GITLAB_ROOT_PASSWORD="12345678" pwaters/gitlab
