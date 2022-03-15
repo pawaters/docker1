@@ -17,3 +17,14 @@ RUN apt-get update -y && \
     echo "gitlab_rails['gitlab_shell_ssh_port'] = 4242" >> /etc/gitlab/gitlab.rb
 EXPOSE 22 443 80
 CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && service ssh restart && gitlab-ctl tail
+
+# Build:
+# docker build -t jylimaul/gitlab .
+# Run:
+# docker run -it --rm -p 80:80 -p 4242:22 -p 443:443 --privileged -e GITLAB_ROOT_EMAIL="jukka.ylimaula@gmail.com" -e GITLAB_ROOT_PASSWORD="12345678" jylimaul/gitlab
+
+# Test:
+# 1. create empty repo called "test", and add ssh key in user preferences.
+# 2. Disable ssl authentication to avoid error message about self signed certificate:
+#        git config --global http.sslVerify false
+# 3. Clone the test repo with ssh and https addresses
