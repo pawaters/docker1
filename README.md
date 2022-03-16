@@ -2,7 +2,7 @@
 
 ## 00) how to docker
 
-# a) Basic containers:
+# A) Basic containers:
 1) docker pull
 3) if port blocked, lsof -i -P -n | grep 5000; kill -9 [PID]; 
  docker inspect -f {{.HostConfig.RestartPolicy}} overlord
@@ -10,6 +10,20 @@
 install vim, gcc, make.
 *ToDo: Find my clean version of fillit. and test it there. Think of easiest I am most proud of.*
 
-# b) Wordpress:
-SQL: SHOW DATABASES; or SHOW SCHEMA;
+# B) Wordpress:
+9-10) SQL: SHOW DATABASES; or SHOW SCHEMA;
 
+11) Set up wordpress with 2 containers: WP and SQL for DB.
+both containers can be run in the same Docker Host, so no need to install Docker in a virtual machine for now. http://localhost:8080.
+Other option than --link: 
+a) create a network: docker network create wp_mysql_net
+b) connect both containers to the network: 
+docker network connect wp_mysql_net spawning-pool
+docker network connect wp_mysql_net lair
+*Question: how does WP exactly use the SQL db? examples.*
+
+12) Set up a phpmyadmin to manage the SQL database created before.
+we reuse the --link option, or can create and connect to network.
+To test: http://localhost:8081, then use the username (root) and password (Kerrigan) defined previously as environment variables (q10).
+
+13) 
