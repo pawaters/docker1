@@ -34,3 +34,8 @@ To test: http://localhost:8081, then use the username (root) and password (Kerri
 # C) Flask Website
 
 16) http://localhost:3000/
+You can check directly in root that .py file is there.
+
+# D) The Swarm
+
+17) docker swarm leave --force (if already in a swarm)
