@@ -1,6 +1,7 @@
 # NOTES FOR EVAL
 
 ## 00) how to docker
+Docker version: docker --version only show client version.
 
 # A) Basic containers:
 1) docker pull
@@ -26,4 +27,6 @@ docker network connect wp_mysql_net lair
 we reuse the --link option, or can create and connect to network.
 To test: http://localhost:8081, then use the username (root) and password (Kerrigan) defined previously as environment variables (q10).
 
-13) 
+13) -f option for following the logs in real time
+
+15) docker ps shows how long the container has been running. 
