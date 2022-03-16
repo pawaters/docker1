@@ -29,4 +29,8 @@ To test: http://localhost:8081, then use the username (root) and password (Kerri
 
 13) -f option for following the logs in real time
 
-15) docker ps shows how long the container has been running. 
+15) docker ps shows how long the container has been running.
+
+# C) Flask Website
+
+16) http://localhost:3000/
