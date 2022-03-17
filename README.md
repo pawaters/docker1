@@ -54,6 +54,10 @@ The VM was created the following way:
 
 Drawing to explain networking: https://bit.ly/3tfHFnx
 
-19) check that the local machine is leader: docker node ls
+19)For this, I have used the VM as the leader, the local machine as slave.
+Reason: local machine firewall (Mac Mini). same idea.
+check leader status: docker node ls
+docker swarm join-token worker
+docker node ls -  only works on master
 
-TEST
+20)
