@@ -55,3 +55,5 @@ The VM was created the following way:
 Drawing to explain networking: https://bit.ly/3tfHFnx
 
 19) check that the local machine is leader: docker node ls
+
+TEST
