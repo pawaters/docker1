@@ -39,3 +39,57 @@ You can check directly in root that .py file is there.
 # D) The Swarm
 
 17) docker swarm leave --force (if already in a swarm)
+18) to install docker on debian 11, https://www.linuxtechi.com/install-docker-engine-on-debian/
+to check version: sudo docker version
+to check status: sudo systemctl status docker
+if needed, to start: sudo systemctl start docker
+to test: sudo docker run hello-world
+
+The VM was created the following way:
+1) I started fresh, I did not use the disk images from roger.
+2) I chose debian as it is famous for its stability vs ubuntu, even if less complete.
+3) set up a network in Virtualbox host manager, with the address 192.168.56.1, mask 255.255.255.0, DHCP deactivated. 
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP
+4) set up 2 adapters: one NAT, one Host-only adapter with the network created.
+5) edited /etc/network/interfaces to define a static IP to the enp0s8 adapter, which is the host-only adapter, the adaptor for the VM, and gave that a static IP.
