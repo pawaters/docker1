@@ -54,10 +54,29 @@ The VM was created the following way:
 
 Drawing to explain networking: https://bit.ly/3tfHFnx
 
-19)For this, I have used the VM as the leader, the local machine as slave.
-Reason: local machine firewall (Mac Mini). same idea.
+19)For this, I have used the VM as the leader, root user, with the local machine as slave.
+Reason: local machine firewall (Mac Mini). 
 check leader status: docker node ls
 docker swarm join-token worker
 docker node ls -  only works on master
+do it twice, before and after joining to see the difference.:w
 
 20)
+
+21 - 22) docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" orbital-command
+
+23 - 24) docker service rm engineering-bay (if needed to reset)
+each node will access independently.
+docker service ps engineering-bay
+Docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" engineering-bay
+It is not command 27 to run (docker service scale -d marines=20) the mariens service is not running.
+It is command ex 24 to see the logs: docker service logs -f $(docker service ps engineering-bay -f "name=engineering-bay.1" -q)
+
+25 - 26 - 27) docker service ps marines
+docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" marinesdocker service logs marines
+
+*TO DO: docker service logs marines does not show what we want - try again anew*
+
+# CLEANUP
+28) docker swarm leave -f is other option.
+
