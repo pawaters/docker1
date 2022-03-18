@@ -107,5 +107,7 @@ steps to install a TeamSpeak 3 Server on Linux, translated in dockerfile
 https://www.bennetrichter.de/en/tutorials/teamspeak3-server-linux/ for rest of the build and run: unzipping file, wget download, unzip, run script.
 
 *USER TESTING*
-- connect to TS server:
-- engage in normal discussion:
+- connect to TS server in TS client: Bookmarks > TeamSpeak server; then add token.i
+
+01-ex01 Team speak client crashes when you connect to any server in its latest version (3.5.6) with latest Mac OS (12.2 Monterrey).
+--> solution (as of 18/3/2022): Download the beta (3.5.7).
