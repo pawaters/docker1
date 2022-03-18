@@ -1,9 +1,9 @@
 # NOTES FOR EVAL
 
-## 00) how to docker
+## 00) HOW TO DOCKER
 Docker version: docker --version only show client version.
 
-# A) Basic containers:
+### A) Basic containers:
 1) docker pull
 3) if port blocked, lsof -i -P -n | grep 5000; kill -9 [PID]; 
  docker inspect -f {{.HostConfig.RestartPolicy}} overlord
@@ -15,7 +15,7 @@ Docker version: docker --version only show client version.
 - sudo apt-get install make -y
 Git repo to use: https://github.com/pawaters/fillit-docker
 
-# B) Wordpress:
+### B) Wordpress:
 9-10) SQL: SHOW DATABASES; or SHOW SCHEMA;
 
 11) Set up wordpress with 2 containers: WP and SQL for DB.
@@ -35,12 +35,12 @@ To test: http://localhost:8081, then use the username (root) and password (Kerri
 
 15) docker ps shows how long the container has been running.
 
-# C) Flask Website
+### C) Flask Website
 
 16) http://localhost:3000/
 You can check directly in root that .py file is there.
 
-# D) The Swarm
+### D) The Swarm
 
 17) docker swarm leave --force (if already in a swarm)
 18) to install docker on debian 11, https://www.linuxtechi.com/install-docker-engine-on-debian/
@@ -80,6 +80,25 @@ It is command ex 24 to see the logs: docker service logs -f $(docker service ps 
 docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" marines
 docker service logs marines
 
-# CLEANUP
+### E) CLEANUP
 28) docker swarm leave -f is other option.
 
+## 01) DOCKERFILES
+Every time, look for build and run instructions as comments of the dockerfile.
+
+00) VIM: to launch Vim's explorer - ":Explore"
+To prove it is the container's env, go to Home, compare with local home.
+
+*WRITE BETTER EXPLANATIONS OF TEAM SPEAK SETUP AND USER CONNECTION*
+01) DEBIAN / TEAM SPEAK: # installing the necesarry packages, removig compressed bz2 file after extraction
+ curl	-k (checking is the server secured, having proper SSL certificate)
+	-L (location)
+	-J (make sure if there is already a same filename not be overwritten)
+	-O (only the file path will be used for naming, the path(html name) will be cut off)
+
+tar	-x (extract)
+		-v (will extract with the same name what is the zip file)
+		-f (file specifier)
+
+# autoremove gonna remove all the unnecesarry dependecies which came with installations
+# and finally; we cleans local files what left from /var/cache/
