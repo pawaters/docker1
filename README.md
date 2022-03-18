@@ -25,7 +25,6 @@ a) create a network: docker network create wp_mysql_net
 b) connect both containers to the network: 
 docker network connect wp_mysql_net spawning-pool
 docker network connect wp_mysql_net lair
-*Question: how does WP exactly use the SQL db? examples.*
 
 12) Set up a phpmyadmin to manage the SQL database created before.
 we reuse the --link option, or can create and connect to network.
@@ -86,11 +85,10 @@ docker service logs marines
 ## 01) DOCKERFILES
 Every time, look for build and run instructions as comments of the dockerfile.
 
-00) VIM: to launch Vim's explorer - ":Explore"
+_00)_ VIM: to launch Vim's explorer - ":Explore"
 To prove it is the container's env, go to Home, compare with local home.
 
-*WRITE BETTER EXPLANATIONS OF TEAM SPEAK SETUP AND USER CONNECTION*
-01) DEBIAN / TEAM SPEAK: 
+_01_) DEBIAN / TEAM SPEAK: 
 
 *SETUP*
 installing the necesarry packages, removig compressed bz2 file after extraction
@@ -111,3 +109,12 @@ https://www.bennetrichter.de/en/tutorials/teamspeak3-server-linux/ for rest of t
 
 01-ex01 Team speak client crashes when you connect to any server in its latest version (3.5.6) with latest Mac OS (12.2 Monterrey).
 --> solution (as of 18/3/2022): Download the beta (3.5.7).
+
+_ex 02)_ Dockerfile to containerize a Rails app
+
+The goal is to create a dockerfile that will install all that is needed to launch the rails server: dependencies, gems, copy app to right place, launch migrations.
+Then the dockerfile given by the subject will laucnh the rails server.
+All the ONBUILD actions will be done when the child image is built.
+Details in parent Dockerfile.
+
+In the vogsphere repo, we have turned in the Dockerfile that was to be created, as well as the subject "rail-Dockerfile", for ease of testing.
