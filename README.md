@@ -90,7 +90,10 @@ Every time, look for build and run instructions as comments of the dockerfile.
 To prove it is the container's env, go to Home, compare with local home.
 
 *WRITE BETTER EXPLANATIONS OF TEAM SPEAK SETUP AND USER CONNECTION*
-01) DEBIAN / TEAM SPEAK: # installing the necesarry packages, removig compressed bz2 file after extraction
+01) DEBIAN / TEAM SPEAK: 
+
+*SETUP*
+installing the necesarry packages, removig compressed bz2 file after extraction
  curl	-k (checking is the server secured, having proper SSL certificate)
 	-L (location)
 	-J (make sure if there is already a same filename not be overwritten)
@@ -100,5 +103,9 @@ tar	-x (extract)
 		-v (will extract with the same name what is the zip file)
 		-f (file specifier)
 
-# autoremove gonna remove all the unnecesarry dependecies which came with installations
-# and finally; we cleans local files what left from /var/cache/
+steps to install a TeamSpeak 3 Server on Linux, translated in dockerfile
+https://www.bennetrichter.de/en/tutorials/teamspeak3-server-linux/ for rest of the build and run: unzipping file, wget download, unzip, run script.
+
+*USER TESTING*
+- connect to TS server:
+- engage in normal discussion:
