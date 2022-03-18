@@ -61,7 +61,7 @@ docker swarm join-token worker
 docker node ls -  only works on master
 do it twice, before and after joining to see the difference.:w
 
-20)
+20) if needed: docker network rm
 
 21 - 22) docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" orbital-command
 
@@ -73,9 +73,8 @@ It is not command 27 to run (docker service scale -d marines=20) the mariens ser
 It is command ex 24 to see the logs: docker service logs -f $(docker service ps engineering-bay -f "name=engineering-bay.1" -q)
 
 25 - 26 - 27) docker service ps marines
-docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" marinesdocker service logs marines
-
-*TO DO: docker service logs marines does not show what we want - try again anew*
+docker service inspect -f "{{.Spec.TaskTemplate.ContainerSpec.Env}}" marines
+docker service logs marines
 
 # CLEANUP
 28) docker swarm leave -f is other option.
