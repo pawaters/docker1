@@ -6,7 +6,7 @@ RUN apt-get update -y && \
     openssh-server \
     ca-certificates \
     postfix && \
-docker build -t pwaters/gitlab    mkdir -p /etc/gitlab/trusted-certs && \
+    mkdir -p /etc/gitlab/trusted-certs && \
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/CN=localhost' -keyout /etc/gitlab/trusted-certs/localhost.key -out /etc/gitlab/trusted-certs/localhost.crt && \
     curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash && \
     apt-get install -y gitlab-ce && \
