@@ -29,3 +29,6 @@ CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && ser
 # - Disable ssl authentication to avoid error message about self signed certificate:
 #        git config --global http.sslVerify false
 # - Clone the test repo with ssh and https addresses
+# - when you are done, reset normal self signed settings:
+#	git config --global http.sslVerify true
+# 	then reconnect to git.

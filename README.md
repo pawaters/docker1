@@ -1,9 +1,14 @@
 # NOTES FOR EVAL
+In general:
+- at the end of each dockerfile: instructions to build, run & test. Made to respond to the requirements of the eval form. 
+- in this readme, comments and extra tests and commands on top of what eval forms requests.
+
+Basically, we should be able to go through evaluation with the minimum comments in the dockerfiles. If not, this file has extra information if needed.
 
 ## 00) HOW TO DOCKER
 Docker version: docker --version only show client version.
 
-### A) Basic containers:
+### A) Basic containers commands:
 1) docker pull
 3) if port blocked, lsof -i -P -n | grep 5000; kill -9 [PID]; 
  docker inspect -f {{.HostConfig.RestartPolicy}} overlord
@@ -120,3 +125,5 @@ Details in parent Dockerfile.
 In the vogsphere repo, we have turned in the Dockerfile that was to be created, as well as the subject "rail-Dockerfile", for ease of testing.
 
 _ex 03) Containerize dev version of Gitlab_
+we followed the instructions indicated in the link of instructions, the updated version to install gitlab. the hardest was to set up https, and the time taken by the installation to be able to test different options. Because of the extensive build and run time, I switched to the best machine I have: MacBook Air (2020) with M1 chip. 
+
