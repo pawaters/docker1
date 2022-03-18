@@ -118,3 +118,5 @@ All the ONBUILD actions will be done when the child image is built.
 Details in parent Dockerfile.
 
 In the vogsphere repo, we have turned in the Dockerfile that was to be created, as well as the subject "rail-Dockerfile", for ease of testing.
+
+_ex 03) Containerize dev version of Gitlab_
