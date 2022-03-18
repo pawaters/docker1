@@ -5,6 +5,8 @@ In general:
 
 Basically, we should be able to go through evaluation with the minimum comments in the dockerfiles. If not, this file has extra information if needed.
 
+_I recommend to start with the last exercise, as it takes 10-20 minutes to build and run. I will do it on my laptop on the backgroun and we can go on with the eval on my desktop._
+
 ## 00) HOW TO DOCKER
 Docker version: docker --version only show client version.
 

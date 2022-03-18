@@ -28,7 +28,7 @@ CMD (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && ser
 # - create empty repo called "test", and add ssh key in user preferences.
 # - Disable ssl authentication to avoid error message about self signed certificate:
 #        git config --global http.sslVerify false
-# - Clone the test repo with ssh and https addresses
-# - when you are done, reset normal self signed settings:
-#	git config --global http.sslVerify true
-# 	then reconnect to git.
+# - clone by https: git clone https://localhost/root/test.git https_test
+# - clone by ssh: git clone ssh://git@localhost:4242/root/test.git ssh_test
+# if issue with host non recognised, remove known hosts: rm ~/.ssh/known_hosts 	
+# as for pushing: create a new dir, git init, add, commit. then git remote add origin ssh://git@localhost:4242/root/test.git then git push -uf origin master.
